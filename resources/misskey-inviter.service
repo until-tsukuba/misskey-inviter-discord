@@ -1,0 +1,18 @@
+[Unit]
+Description=Discord Bot Service
+After=network.target
+
+[Service]
+User=
+Group=
+WorkingDirectory=/opt/misskey-inviter
+ExecStart=poetry run python main.py
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+Environment=MISSKEY_TOKEN=
+Environment=DISCORD_TOKEN=
+Environment=MISSKEY_HOST=
+
+[Install]
+WantedBy=multi-user.target
+
